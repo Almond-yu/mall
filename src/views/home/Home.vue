@@ -5,8 +5,7 @@
       <div slot="center">购物街</div>
     </NavBar>
     <!-- 轮播图 -->
-    <MySwiper/>
-
+      <MySwiper :banners="banners" v-if="banners.length!=0"></MySwiper>
   </div>
 </template>
 
@@ -29,6 +28,8 @@ export default {
       recommends: [],
     };
   },
+  methods:{
+  },
   mounted() {
     
   },
@@ -37,6 +38,7 @@ export default {
     getHomeMultidata().then((res) => {
       this.banners = res.data.banner.list;
       this.recommends = res.data.recommend.list;
+     
     });
   },
 };

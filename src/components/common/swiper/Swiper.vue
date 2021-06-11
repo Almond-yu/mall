@@ -34,7 +34,6 @@ export default {
       if(this.autoplay){
         let timer = setInterval(()=>{
         let index = this.names.indexOf(this.currentName)
-        console.log(index);
         let newIndex = ++index;
         if(newIndex===this.names.length){
           newIndex=0;

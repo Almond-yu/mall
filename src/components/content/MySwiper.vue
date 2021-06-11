@@ -2,15 +2,27 @@
   <div>
     <Swiper v-model="selected" autoplay>
       <SwiperItem name="box1">
-        <img  class="content" src="@/assets/img/swiper/1.jpg" alt="">
+        <a :href="this.banners[0].link">
+          <img  class="content" :src="this.banners[0].image" alt="">
+        </a>
       </SwiperItem>
 
       <SwiperItem name="box2">
-        <img class="content" src="@/assets/img/swiper/2.jpg" alt="">
+        <a :href="this.banners[1].link">
+          <img class="content" :src="this.banners[1].image" alt="">
+        </a>
       </SwiperItem>
 
       <SwiperItem name="box3">
-        <img class="content" src="@/assets/img/swiper/3.jpg" alt="">
+        <a :href="this.banners[2].link">
+          <img class="content" :src="this.banners[2].image" alt="">
+        </a>
+      </SwiperItem>
+
+      <SwiperItem name="box4">
+        <a :href="this.banners[3].link">
+          <img class="content" :src="this.banners[3].image" alt="">
+        </a>
       </SwiperItem>
     </Swiper>
   </div>
@@ -25,9 +37,14 @@ export default {
     Swiper,
     SwiperItem
   },
+  props:{
+    banners:{}
+  },
   data(){
-    return { selected: "box1" };
-  }
+    return { 
+      selected: "box1",
+     };
+  },
 }
 </script>
 
